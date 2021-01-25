@@ -16,8 +16,8 @@ public class GameControl : MonoBehaviour
 	void Start()
 	{	
 		int originalLength = faceindexes.Count;
-		float yPosition = 2.3f;
-		float xPosition = -2.2f;
+		float yPosition = 2.0f;
+		float xPosition = -2.5f;
 		for (int i =0; i<7; i++)
 		{
 			shuffleNum = rnd.Next(0,(faceindexes.Count));
@@ -26,11 +26,11 @@ public class GameControl : MonoBehaviour
 				Quaternion.identity);
 			temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
 			faceindexes.Remove(faceindexes[shuffleNum]);
-			xPosition = xPosition + 4;
+			xPosition = xPosition + 3.5f;
 			if (i == (originalLength/2 - 2))
 			{
-				yPosition = -2.3f;
-				xPosition = -6.2f;
+				yPosition = -1.5f;
+				xPosition = -6.0f;
 			}		
 		}
 		token.GetComponent<MainToken>().faceIndex = faceindexes[0];
